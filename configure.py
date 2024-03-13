@@ -1250,7 +1250,8 @@ def configure_node(o):
   o['default_configuration'] = 'Debug' if options.debug else 'Release'
   o['variables']['error_on_warn'] = b(options.error_on_warn)
 
-  host_arch = host_arch_win() if os.name == 'nt' else host_arch_cc()
+  # host_arch = host_arch_win() if os.name == 'nt' else host_arch_cc()
+  host_arch = os.environ.get('HOST_ARCH')
   target_arch = options.dest_cpu or host_arch
   # ia32 is preferred by the build tools (GYP) over x86 even if we prefer the latter
   # the Makefile resets this to x86 afterward

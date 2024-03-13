@@ -1081,13 +1081,6 @@
         ['v8_enable_third_party_heap', {
           # TODO(targos): add values from v8_third_party_heap_libs to link_settings.libraries
         }],
-        # Platforms that don't have Compare-And-Swap (CAS) support need to link atomic library
-        # to implement atomic memory access
-        ['v8_current_cpu in ["mips64", "mips64el", "ppc", "arm", "riscv64", "loong64"]', {
-          'link_settings': {
-            'libraries': ['-latomic', ],
-          },
-        }],
       ],
     },  # v8_base_without_compiler
     {

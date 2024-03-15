@@ -15,6 +15,8 @@
  */
 #include "ares_setup.h"
 
+#undef HAVE_GETSERVBYPORT_R
+
 #ifdef HAVE_GETSERVBYPORT_R
 #  if !defined(GETSERVBYPORT_R_ARGS) || \
      (GETSERVBYPORT_R_ARGS < 4) || (GETSERVBYPORT_R_ARGS > 6)
